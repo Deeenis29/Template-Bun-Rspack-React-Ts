@@ -1,22 +1,23 @@
-# Rspack + React + Typescript
+# 🚀 Bun + Rspack + React + TypeScript
 
-## Deploy
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FKyrieLii%2Frspack-ts-react-demo&project-name=rspack-ts-react-demo&repository-name=rspack-ts-react-demo&output-directory=dist)
+A modern and fast development environment using Bun, Rspack, React, and TypeScript.
 
 ## Env
 
-- node >= 16
-- pnpm >= 8
+Bun v1.2.3
 
-## install
+## ⚡ install
 
-pnpm install
+bun install
 
-## Dev
+## 🔧 Dev
 
-pnpm dev
+bun run dev
 
-## build
+## 🏗️ Building
 
-pnpm build
+bun run build
+
+## 🛠️ Linter (Biome)
+
+bun run lint

@@ -3,10 +3,11 @@
   "private": true,
   "version": "0.0.1",
   "scripts": {
-    "dev": "rspack serve",
-    "build": "rspack build",
-    "lint": "biome format --write"
+    "dev": "bun run rspack serve",
+    "build": "bun run rspack build",
+    "lint": "bun run biome format --write"
   },
+
   "dependencies": {
     "@swc/helpers": "^0.5.3",
     "react": "^18.2.0",
@@ -26,5 +27,5 @@
   "lint-staged": {
     "*.{ts,tsx,js,jsx,css,md,json}": "biome format --write"
   },
-  "packageManager": "pnpm@9.9.0"
+  "packageManager": "bun@1.0.0"
 }

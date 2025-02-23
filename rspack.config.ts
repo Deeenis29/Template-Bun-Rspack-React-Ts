@@ -4,17 +4,22 @@ import ReactRefreshPlugin from '@rspack/plugin-react-refresh';
 
 const isDev = process.env.NODE_ENV === 'development';
 
+const browsersTargets = [
+  'chrome >= 87',
+  'edge >= 88',
+  'firefox >= 78',
+  'safari >= 14'
+];
+
 const config: Configuration = {
   entry: {
     main: './src/main.tsx',
   },
   plugins: [
-    new rspack.HtmlRspackPlugin({
-      template: './index.html',
-    }),
-    isDev ? new ReactRefreshPlugin() : null,
+    new rspack.HtmlRspackPlugin({ template: './index.html' }),
+    isDev ? new ReactRefreshPlugin() : undefined, 
     new rspack.ProgressPlugin({}),
-  ],
+  ].filter(Boolean), 
   experiments: {
     css: true,
   },
@@ -26,6 +31,7 @@ const config: Configuration = {
       {
         test: /\.svg$/,
         type: 'asset',
+        resourceQuery: { not: [/react/] } // Evita conflictos con react-svg
       },
       {
         test: /\.(jsx?|tsx?)$/,
@@ -49,12 +55,7 @@ const config: Configuration = {
                 },
               },
               env: {
-                targets: [
-                  'chrome >= 87',
-                  'edge >= 88',
-                  'firefox >= 78',
-                  'safari >= 14',
-                ],
+                targets: browsersTargets
               },
             },
           },

@@ -23,7 +23,7 @@
       "semicolons": "always",
       "jsxQuoteStyle": "double",
       "quoteProperties": "asNeeded",
-      "trailingCommas": "es5",
+      "trailingCommas": "all",
       "arrowParentheses": "always",
       "bracketSpacing": true,
       "bracketSameLine": false,
